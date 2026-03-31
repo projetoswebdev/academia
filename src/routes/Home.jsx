@@ -1,5 +1,12 @@
 import {Link} from 'react-router-dom'
 
+const stats = [
+  {valor: '2.500+', texto: 'Alunos Ativos'},
+  {valor: '98%', texto: 'Satisfação dos Alunos'},
+  {valor: '15+', texto: 'Anos de Mercado'},
+  {valor: '50+', texto: 'Modalidades'},
+]
+
 const Home = () => {
   return (
     <div className='home'>
@@ -16,6 +23,19 @@ const Home = () => {
         </div>
         <div className='hero-scroll'>↓ scroll</div>
       </section>
+
+      {/* estatisticas */}
+      <section className='stats'>
+        <div className='grid-stats'>
+          {stats.map(s =>(
+            <div key={s.texto} className='stat-card'>
+              <span className='stats-card-valor'>{s.valor}</span>
+              <p className='stats-card-texto'>{s.texto}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       
     </div>
   )
