@@ -36,7 +36,7 @@ const Home = () => {
         </div>
       </section>
       
-      {/* informações academia */}
+      {/* informações/beneficios academia */}
       <section className='container-info'>
         <div className='info-text'>
           <div className='info-titulo'>POR QUE A </div>
@@ -45,9 +45,23 @@ const Home = () => {
           <p>Nossa tecnologia monitora seu desempenho, sugere ajustes e mantém você motivado dia após dia.</p>
           <Link to="/sobre" className='btn-outline' style={{marginTop:'1.5rem', display:'inline-block'}}>Conheça nossa história</Link>
         </div>
+        <div className='info-beneficios'>
+          {[
+            { icone:'🤖', titulo:'IA Personalizada', desc:'Treinos ajustados automaticamente ao seu progresso e objetivos.' },
+            {icone:'📊', titulo:'Dashboard de Evolução', desc:'Acompanhe cada métrica da sua jornada fitness em tempo real.'},
+            {icone:'🎯', titulo:'Metas Inteligentes', desc:'A IA define metas realistas e te mantém no caminho certo.'},
+            {icone:'💪', titulo:'Equipe Especializada', desc:'Profissionais certificados prontos para te apoiar.' },
+
+          ].map(f => (
+            <div key={f.titulo} className='card-beneficios'>
+              <span className='card-beneficios-icone'>{f.icone}</span>
+              <h3 className='card-beneficios-titulo'>{f.titulo}</h3>
+              <p className='card-beneficios-desc'>{f.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
-      
     </div>
   )
 }
