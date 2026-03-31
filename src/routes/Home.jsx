@@ -35,6 +35,17 @@ const Home = () => {
           ))}
         </div>
       </section>
+      
+      {/* informações academia */}
+      <section className='container-info'>
+        <div className='info-text'>
+          <div className='info-titulo'>POR QUE A </div>
+          <div><span>FORCEX?</span></div>
+          <p>Somos a primeira academia de São Paulo a integrar inteligência artificial no acompanhamento de treinos. Cada aluno recebe um plano 100% personalizado, ajustado em tempo real conforme sua evolução.</p>
+          <p>Nossa tecnologia monitora seu desempenho, sugere ajustes e mantém você motivado dia após dia.</p>
+          <Link to="/sobre" className='btn-outline' style={{marginTop:'1.5rem', display:'inline-block'}}>Conheça nossa história</Link>
+        </div>
+      </section>
 
       
     </div>
