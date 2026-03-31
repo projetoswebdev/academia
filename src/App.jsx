@@ -7,7 +7,6 @@ import Contato from './routes/Contato'
 import Planos from './routes/Planos'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Nav from './components/Nav'
 
 function App() {
 
