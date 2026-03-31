@@ -1,9 +1,15 @@
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div>
-      
-    </div>
+    <section className='nav'>
+        <Link to="/">Home</Link>
+        <Link to="/contato">Contato</Link>
+        <Link to="/imc">Imc</Link>
+        <Link to="/sobre">Sobre</Link>
+        <Link to="/planos">Planos</Link>
+
+    </section>
   )
 }
 
