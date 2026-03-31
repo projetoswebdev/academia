@@ -1,9 +1,9 @@
 
 const Sobre = () => {
   return (
-    <div>
-      
-    </div>
+    <section>
+        <h2>Sobre</h2>
+    </section>
   )
 }
 

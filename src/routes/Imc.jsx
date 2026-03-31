@@ -1,9 +1,9 @@
 
 const Calculadoraimc = () => {
   return (
-    <div>
-      
-    </div>
+    <section>
+        <h2>Calculadora IMC</h2>
+    </section>
   )
 }
 

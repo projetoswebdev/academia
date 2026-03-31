@@ -1,9 +1,9 @@
 
 const Planos = () => {
   return (
-    <div>
-      
-    </div>
+    <section>
+        <h2>Planos</h2>
+    </section>
   )
 }
 
