@@ -23,6 +23,20 @@ const Sobre = () => {
           </div>
         </div>
       </section>
+      {/* valores da marca */}
+      <section className="valores-container">
+        {[
+          { icone: '🎯', titulo: 'Missão', texto: 'Democratizar o acesso a treinos de alta performance com o poder da inteligência artificial, tornando cada aluno protagonista da sua evolução.' },
+          { icone: '🔭', titulo: 'Visão', texto: 'Ser referência nacional em academias inteligentes até 2026, liderando a revolução fitness com tecnologia e humanidade.' },
+          { icone: '💚', titulo: 'Valores', texto: 'Comprometimento, inovação constante, respeito ao indivíduo e paixão pelo resultado. Esses princípios guiam cada decisão da ForceX.' },
+        ].map(v => (
+          <div key={v.titulo} className="valores-card">
+            <span>{v.icone}</span>
+            <h3>{v.titulo}</h3>
+            <p>{v.texto}</p>
+          </div>
+        ))}
+      </section>
 
     </div>
   )
