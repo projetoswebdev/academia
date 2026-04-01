@@ -1,5 +1,33 @@
 import {Link} from 'react-router-dom'
 
+const planosPopulares = [
+  {
+    icone: '⚡',
+    nome: 'STARTER',
+    preco: 'R$ 89',
+    mes: '/mês',
+    desc: 'Ideal para quem está começando a jornada fitness com suporte básico de treino.',
+    beneficios: ['Acesso à musculação', 'App de treinos', 'Avaliação física inicial'],
+  },
+  {
+    icone: '🔥',
+    nome: 'PRO',
+    preco: 'R$ 149',
+    mes: '/mês',
+    desc: 'O mais escolhido pelos nossos alunos. Resultados comprovados com acompanhamento.',
+    beneficios: ['Tudo do Starter', 'Personal IA semanal', 'Acesso às aulas coletivas', 'Dieta personalizada'],
+    highlight: true,
+  },
+  {
+    icone: '👑',
+    nome: 'ELITE',
+    preco: 'R$ 249',
+    mes: '/mês',
+    desc: 'Experiência premium com máxima personalização e suporte ilimitado.',
+    beneficios: ['Tudo do Pro', 'Personal humano 3x/semana', 'Acesso 24h', 'Suporte prioritário'],
+  },
+]
+
 const stats = [
   {valor: '2.500+', texto: 'Alunos Ativos'},
   {valor: '98%', texto: 'Satisfação dos Alunos'},
@@ -59,6 +87,34 @@ const Home = () => {
               <p className='card-beneficios-desc'>{f.desc}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* planos da academia */}
+      <section className='planos'>
+        <div className='container-planos'>
+          <p className='planos-cabecalho'>PLANOS MAIS POPULARES</p>
+          <div className='info-titulo'>ESCOLHA SEU </div>
+          <div><span>NÍVEL</span></div>
+          <div className='planos-grid'>
+            {planosPopulares.map(p =>(
+              <div key={p.nome} className='card-planos'>
+                {p.highlight && <div className='card-planos-badge'>Mais Escolhido</div>}
+                <div className='planos-card-icone'>{p.icone}</div>
+                <h3 className='planos-card-nome'>{p.nome}</h3>
+                <div className='planos-card-preco'>{p.preco}<span>{p.mes}</span></div>
+                <p className='planos-card-desc'>{p.desc}</p>
+                <ul className='planos-card-beneficios'>
+                  {p.beneficios.map(f => <li key={f}>✓ {f}</li> )}
+                </ul>
+                <Link to="/planos" className={p.highlight ? 'btn-planos' : 'btn-outline'}>Assinar Agora</Link>
+              </div>
+            ))}
+          </div>
+          <div className="planos-cta">
+            <Link to="/planos" className="btn-outline">Ver Todos os Planos →</Link>
+          </div>  
+
         </div>
       </section>
 
