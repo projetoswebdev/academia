@@ -121,8 +121,10 @@ const Planos = () => {
           </div>
         ))}
       </div>
-
-
+      <div className='planos-garantia'>
+        <span>🛡️</span>
+        <p><strong>Garantia de 7 dias.</strong> Não gostou? Devolvemos seu dinheiro sem perguntas.</p>
+      </div>
     </div>
   )
 }
