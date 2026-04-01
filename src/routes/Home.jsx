@@ -42,7 +42,7 @@ const Home = () => {
       <section className='hero'>
         <div className='hero-container'>
           <div className='badge'>Academia Inteligente</div>
-          <h1>TRANSFORME<br/> SEU <span>CORPO</span><br/> COM INTELIGÊNCIA</h1>
+          <h1 className='hero-titulo'>TRANSFORME<br/> SEU <span>CORPO</span><br/> COM INTELIGÊNCIA</h1>
           <p className='subtitulo'>Treinos personalizados por IA, acompanhamento em tempo real e a estrutura mais moderna de São Paulo</p>
           <div className='hero-btn'>
             <Link to="/planos" className='btn-planos'>Conheça nossos planos</Link>
@@ -68,7 +68,7 @@ const Home = () => {
       <section className='container-info'>
         <div className='info-text'>
           <div className='info-titulo'>POR QUE A </div>
-          <div><span>FORCEX?</span></div>
+          <div className='info-titulo'><span>FORCEX?</span></div>
           <p>Somos a primeira academia de São Paulo a integrar inteligência artificial no acompanhamento de treinos. Cada aluno recebe um plano 100% personalizado, ajustado em tempo real conforme sua evolução.</p>
           <p>Nossa tecnologia monitora seu desempenho, sugere ajustes e mantém você motivado dia após dia.</p>
           <Link to="/sobre" className='btn-outline' style={{marginTop:'1.5rem', display:'inline-block'}}>Conheça nossa história</Link>
@@ -95,7 +95,7 @@ const Home = () => {
         <div className='container-planos'>
           <p className='planos-cabecalho'>PLANOS MAIS POPULARES</p>
           <div className='info-titulo'>ESCOLHA SEU </div>
-          <div><span>NÍVEL</span></div>
+          <div className='info-titulo'><span>NÍVEL</span></div>
           <div className='planos-grid'>
             {planosPopulares.map(p =>(
               <div key={p.nome} className='card-planos'>
