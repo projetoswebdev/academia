@@ -64,66 +64,67 @@ const Planos = () => {
         <p className="planos-subtitulo">
           Escolha o plano que se encaixa no seu ritmo. Todos incluem acesso ao app ForceX e avaliação física.
         </p>
-      </div>
+      
 
-      {/* toggle */}
-      <div className="plano-toggle">
-        <span className={!anual ? 'active' : ''}>Mensal</span>
-        <button className={`toggle-btn ${anual ? 'toggle-btn--on' : ''}`}
-            onClick={() => setAnual(v => !v)}
-            aria-label="Alternar entre mensal e anual">
-        </button>
-        <span className={anual ? 'active' : ''}>
-          Anual <em>-20%</em>
-        </span>
-      </div>
-      {/* grade de planos */}
-      <div className='plano-grid'>
-        {planos.map(p =>(
-          <div key={p.nome} className={`plano-card ${p.highlight ? 'plano-card--highlight' : ''}`}>
-            {p.highlight && <div className="plano-card__badge">⭐ Mais Popular</div>}
-            <div className="plano-card-header">
-              <span className="plano-card-icon">{p.icone}</span>
-              <h2 className="plano-card-nome">{p.nome}</h2>
+        {/* toggle */}
+        <div className="plano-toggle">
+          <span className={!anual ? 'active' : ''}>Mensal</span>
+          <button className={`toggle-btn ${anual ? 'toggle-btn--on' : ''}`}
+              onClick={() => setAnual(v => !v)}
+              aria-label="Alternar entre mensal e anual">
+          </button>
+          <span className={anual ? 'active' : ''}>
+            Anual <em>-20%</em>
+          </span>
+        </div>
+        {/* grade de planos */}
+        <div className='plano-grid'>
+          {planos.map(p =>(
+            <div key={p.nome} className={`plano-card ${p.highlight ? 'plano-card--highlight' : ''}`}>
+              {p.highlight && <div className="plano-card__badge">⭐ Mais Popular</div>}
+              <div className="plano-card-header">
+                <span className="plano-card-icon">{p.icone}</span>
+                <h2 className="plano-card-nome">{p.nome}</h2>
+              </div>
+              <div className='plano-card-preco'>
+                <span className="plano-card__amount">
+                  R$ {anual ? p.preco.anual : p.preco.mensal}
+                </span>
+                <span className="plano-card-mes">/mês</span>
+              </div>
+              {anual && (
+                <p className="plano-card-anual-note">Cobrado anualmente - R$ {p.preco.anual*12}/ano</p>
+              )}
+
+              <p className='plano-card-desc'>{p.desc}</p>
+
+              <ul className='plano-card-beneficios'> 
+                {p.beneficios.map(f => (
+                  <li key={f} className="plano-card-beneficio plano-card-beneficio--incluido">
+                    <span>✓</span>{f}
+                  </li>
+                ))}
+                {p.notIncluded.map(f => (
+                  <li key={f} className="plano-card-beneficio plano-card-beneficio--nao-incluido">
+                    <span>✗</span>{f}
+                  </li>
+                ))}
+                {p.notIncluded.map(f => (
+                  <li key={f} className="plano-card-beneficio plano-card-beneficio--nao-incluido">
+                    <span>✗</span>{f}
+                  </li>
+                ))}
+              </ul>
+
+              <button className={p.highlight ? 'btn-planos' : 'btn-outline'} style={{width: '100%', marginTop: 'auto'}}>{p.cta}
+              </button>
             </div>
-            <div className='plano-card-preco'>
-              <span className="plano-card__amount">
-                R$ {anual ? p.preco.anual : p.preco.mensal}
-              </span>
-              <span className="plano-card-mes">/mês</span>
-            </div>
-            {anual && (
-              <p className="plano-card-anual-note">Cobrado anualmente - R$ {p.preco.anual*12}/ano</p>
-            )}
-
-            <p className='plano-card-desc'>{p.desc}</p>
-
-            <ul className='plano-card-beneficios'> 
-              {p.beneficios.map(f => (
-                <li key={f} className="plano-card-beneficio plano-card-beneficio--incluido">
-                  <span>✓</span>{f}
-                </li>
-              ))}
-              {p.notIncluded.map(f => (
-                <li key={f} className="plano-card-beneficio plano-card-beneficio--nao-incluido">
-                  <span>✗</span>{f}
-                </li>
-              ))}
-              {p.notIncluded.map(f => (
-                <li key={f} className="plano-card-beneficio plano-card-beneficio--nao-incluido">
-                  <span>✗</span>{f}
-                </li>
-              ))}
-            </ul>
-
-            <button className={p.highlight ? 'btn-planos' : 'btn-outline'} style={{width: '100%', marginTop: 'auto'}}>{p.cta}
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className='planos-garantia'>
-        <span>🛡️</span>
-        <p><strong>Garantia de 7 dias.</strong> Não gostou? Devolvemos seu dinheiro sem perguntas.</p>
+          ))}
+        </div>
+        <div className='planos-garantia'>
+          <span>🛡️</span>
+          <p><strong>Garantia de 7 dias.</strong> Não gostou? Devolvemos seu dinheiro sem perguntas.</p>
+        </div>
       </div>
     </div>
   )
