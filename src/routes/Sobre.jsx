@@ -12,6 +12,21 @@ const timeline = [
     evento: 'ForceX torna-se a academia mais inteligente de São Paulo.' },
 ]
 
+const time = [
+  { nome: 'Carlos Mendes', 
+    papel: 'Head de Treinamento', 
+    icone: '🏋️' },
+  { nome: 'Ana Lúcia Torres', 
+    papel: 'Especialista em Nutrição', 
+    icone: '🥗' },
+  { nome: 'Rafael Souza', 
+    papel: 'Engenheiro de IA', 
+    icone: '🤖' },
+  { nome: 'Juliana Costa', 
+    papel: 'Coordenadora de Bem-estar', 
+    icone: '🧘' },
+]
+
 const Sobre = () => {
   return (
     // header
@@ -69,6 +84,20 @@ const Sobre = () => {
         </div>
       </section>
 
+      {/* apresentação do time */}
+      <section className="time-container">
+        <p className="cabecalho">Time ForceX</p>
+        <h2 className="info-titulo">QUEM FAZ A<br /><span>DIFERENÇA</span></h2>
+        <div className="time-grid">
+          {time.map(m => (
+            <div key={m.nome} className="time-card">
+              <div className="time-card_avatar">{m.icone}</div>
+              <h4>{m.nome}</h4>
+              <p>{m.papel}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }
