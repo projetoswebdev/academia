@@ -1,15 +1,47 @@
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import '../css/header.css'
 
 const Header = () => {
-  return (
-    <section className='nav'>
-        <Link to="/">Home</Link>
-        <Link to="/contato">Contato</Link>
-        <Link to="/imc">Imc</Link>
-        <Link to="/sobre">Sobre</Link>
-        <Link to="/planos">Planos</Link>
+  const [scroll, setScroll] = useState(false)
 
-    </section>
+
+  useEffect(() => {
+    const onScroll = () => setScroll(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const links = [
+    { to: '/', label: 'Home' },
+    { to: '/sobre', label: 'Sobre' },
+    { to: '/planos', label: 'Planos' },
+    { to: '/calculadora-imc', label: 'Calc. IMC' },
+    { to: '/contato', label: 'Contato' },
+  ]
+
+  return (
+    <nav className={`navbar ${scroll ? 'navbar--scroll' : ''}`}>
+      <div className="container navbar-container">
+        <NavLink to="/" className='navbar-logo'>FORCE<span>X</span></NavLink>
+        <ul className="navbar-links">
+          {links.map(l => (
+            <li key={l.to}>
+              <NavLink to={l.to} end={l.to === '/'} className={({ isActive }) => isActive ? 'navbar-link navbar-link--active' : 'navbar-link'}>
+                {l.label}
+              </NavLink>
+            </li>
+          ))}
+          <li>
+            <NavLink to="/planos" className="btn-planos navbar-cta">
+              Comece Agora
+            </NavLink>
+          </li>
+        </ul>
+
+
+      </div>
+    </nav>
   )
 }
 
