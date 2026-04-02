@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import '../css/home.css'
 
 const planosPopulares = [
   {
@@ -96,7 +97,7 @@ const Home = () => {
           <h2 className="info-titulo">ESCOLHA SEU <span>NÍVEL</span></h2>
           <div className='planos-grid'>
             {planosPopulares.map(p =>(
-              <div key={p.nome} className='card-planos'>
+              <div key={p.nome} className={`card-planos ${p.highlight ? 'card-planos--highlight' : ''}`}>
                 {p.highlight && <div className='card-planos-badge'>Mais Escolhido</div>}
                 <div className='planos-card-icone'>{p.icone}</div>
                 <h3 className='planos-card-nome'>{p.nome}</h3>
