@@ -93,8 +93,7 @@ const Home = () => {
       <section className='planos'>
         <div className='container container-planos'>
           <p className='planos-cabecalho'>PLANOS MAIS POPULARES</p>
-          <div className='info-titulo'>ESCOLHA SEU </div>
-          <div className='info-titulo'><span>NÍVEL</span></div>
+          <h2 className="info-titulo">ESCOLHA SEU <span>NÍVEL</span></h2>
           <div className='planos-grid'>
             {planosPopulares.map(p =>(
               <div key={p.nome} className='card-planos'>
