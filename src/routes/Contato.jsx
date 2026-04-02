@@ -1,10 +1,6 @@
-
 const Contato = () => {
   return (
     <section>
-        <h2>Página Contato</h2>
-    </section>
-  )
-}
-
-export default Contato
+      {/* Título da página */}
+      <h2>Contato</h2>
+      <p>Entre em contato com a nossa Academia Inteligente.</p>
