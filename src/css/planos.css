@@ -1,0 +1,195 @@
+.plano {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cabecalho {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--warm-brown);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.planos-subtitulo {
+  color: rgba(242,242,242,0.6);
+  max-width: 500px;
+  line-height: 1.7;
+  margin: 1rem 0 2.5rem;
+}
+
+.plano-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+
+.plano-toggle span.active { color: var(--off-white); }
+.plano-toggle em {
+  font-style: normal;
+  background: var(--green-dark);
+  color: var(--off-white);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  margin-left: 4px;
+}
+
+.toggle-btn {
+  width: 48px;
+  height: 26px;
+  background: rgba(47,64,54,0.4);
+  border: 1px solid rgba(47,64,54,0.6);
+  border-radius: 999px;
+  position: relative;
+  transition: background var(--transition);
+}
+.toggle-btn--on { background: var(--green-dark); }
+.toggle-btn span {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 18px; height: 18px;
+  background: var(--off-white);
+  border-radius: 50%;
+  transition: transform var(--transition);
+}
+.toggle-btn--on span { transform: translateX(22px); }
+
+.plano-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.plano-card {
+  background: rgba(47,64,54,0.1);
+  border: 1px solid rgba(47,64,54,0.3);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.plano-card:hover {
+  border-color: var(--green-dark);
+  transform: translateY(-4px);
+}
+
+.plano-card--highlight {
+  background: rgba(47,64,54,0.22);
+  border-color: var(--warm-brown);
+  transform: translateY(-8px);
+}
+.plano-card--highlight:hover { transform: translateY(-12px); }
+.plano-card__badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--warm-brown);
+  color: var(--off-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.35rem 1.2rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.plano-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.plano-card-icone { font-size: 1.8rem; }
+.plano-card-nome {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 0.06em;
+}
+
+.plano-card-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.plano-card__amount {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--warm-brown);
+  letter-spacing: 0.02em;
+}
+.plano-card-mes {
+  font-size: 0.9rem;
+  color: rgba(242,242,242,0.45);
+}
+
+.plano-card-anual-note {
+  font-size: 0.78rem;
+  color: rgba(242,242,242,0.45);
+  margin-top: -0.5rem;
+}
+
+.plano-card-desc {
+  font-size: 0.88rem;
+  color: rgba(242,242,242,0.6);
+  line-height: 1.6;
+}
+
+.plano-card__divider {
+  height: 1px;
+  background: rgba(47,64,54,0.4);
+}
+
+.plano-card-beneficios {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.plano-card-beneficio {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.plano-card-beneficio span {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  width: 16px;
+}
+.plano-card-beneficio--incluido { color: rgba(242,242,242,0.8); }
+.plano-card-beneficio--incluido span { color: #5cb85c; }
+.plano-card-beneficio--nao-incluido { color: rgba(242,242,242,0.3); }
+.plano-card-beneficio--nao-incluido span { color: rgba(242,242,242,0.3); }
+
+.planos-garantia {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  background: rgba(47,64,54,0.15);
+  border: 1px solid rgba(47,64,54,0.35);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.5rem;
+}
+.planos-garantia span { font-size: 2rem; }
+.planos-garantia p { font-size: 0.9rem; color: rgba(242,242,242,0.7); }
+.planos-garantia strong { color: var(--off-white); }
+
+@media (max-width: 900px) {
+  .plano-grid { grid-template-columns: 1fr; max-width: 420px; }
+  .plano-card--highlight { transform: none; }
+}

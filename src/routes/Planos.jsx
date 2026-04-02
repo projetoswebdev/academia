@@ -1,11 +1,11 @@
 import { useState } from 'react'
+import '../css/planos.css'
 
 const planos = [
   {
     icone: '⚡',
     nome: 'STARTER',
     preco: { mensal: 89, anual: 71 },
-    mes: '/mês',
     desc: 'Perfeito para quem está dando os primeiros passos na jornada fitness.',
     beneficios: [
       'Acesso à musculação (06h–22h)',
@@ -21,7 +21,6 @@ const planos = [
     icone: '🔥',
     nome: 'PRO',
     preco: {mensal: 149, anual: 119},
-    mes: '/mês',
     desc: 'O plano mais escolhido. Resultados reais com acompanhamento inteligente.',
     beneficios: [
       'Tudo do Starter',
@@ -38,7 +37,6 @@ const planos = [
     icone: '👑',
     nome: 'ELITE',
     preco: {mensal: 249, anual: 199},
-    mes: '/mês',
     desc: 'Experiência máxima com total suporte humano e inteligência artificial.',
     beneficios: [
       'Tudo do Pro',
@@ -71,7 +69,7 @@ const Planos = () => {
           <span className={!anual ? 'active' : ''}>Mensal</span>
           <button className={`toggle-btn ${anual ? 'toggle-btn--on' : ''}`}
               onClick={() => setAnual(v => !v)}
-              aria-label="Alternar entre mensal e anual">
+              aria-label="Alternar entre mensal e anual"> <span></span>
           </button>
           <span className={anual ? 'active' : ''}>
             Anual <em>-20%</em>
@@ -83,7 +81,7 @@ const Planos = () => {
             <div key={p.nome} className={`plano-card ${p.highlight ? 'plano-card--highlight' : ''}`}>
               {p.highlight && <div className="plano-card__badge">⭐ Mais Popular</div>}
               <div className="plano-card-header">
-                <span className="plano-card-icon">{p.icone}</span>
+                <span className="plano-card-icone">{p.icone}</span>
                 <h2 className="plano-card-nome">{p.nome}</h2>
               </div>
               <div className='plano-card-preco'>
@@ -109,11 +107,7 @@ const Planos = () => {
                     <span>✗</span>{f}
                   </li>
                 ))}
-                {p.notIncluded.map(f => (
-                  <li key={f} className="plano-card-beneficio plano-card-beneficio--nao-incluido">
-                    <span>✗</span>{f}
-                  </li>
-                ))}
+                
               </ul>
 
               <button className={p.highlight ? 'btn-planos' : 'btn-outline'} style={{width: '100%', marginTop: 'auto'}}>{p.cta}
