@@ -1,4 +1,17 @@
 
+const timeline = [
+  { ano: '2009', 
+    evento: 'Fundação da ForceX com foco em musculação e resultado.' },
+  { ano: '2015', 
+    evento: 'Expansão para 3 unidades e lançamento das aulas funcionais.' },
+  { ano: '2019', 
+    evento: 'Início da parceria com startups de tecnologia fitness.' },
+  { ano: '2022', 
+    evento: 'Integração do primeiro sistema de IA para treinos personalizados.' },
+  { ano: '2024', 
+    evento: 'ForceX torna-se a academia mais inteligente de São Paulo.' },
+]
+
 const Sobre = () => {
   return (
     // header
@@ -36,6 +49,24 @@ const Sobre = () => {
             <p>{v.texto}</p>
           </div>
         ))}
+      </section>
+
+      {/* timeline */}
+      <section className="timeline-secao">
+        <div className="container">
+          <p className="cabecalho">Nossa Trajetória</p>
+          <h2 className="info-titulo">HISTÓRIA QUE<br /><span>INSPIRA</span></h2>
+          <div className="timeline">
+            {timeline.map((t, i) => (
+              <div key={t.ano} className={`timeline-item ${i % 2 === 0 ? 'timeline_item--left' : 'timeline_item--right'}`}>
+                <div className="timeline-content">
+                  <span className="timeline-ano">{t.ano}</span>
+                  <p>{t.evento}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
     </div>
