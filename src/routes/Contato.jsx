@@ -22,3 +22,12 @@ const Contato = () => {
         {/* Seção mensagem */}
         <label htmlFor="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem"></textarea>
+
+      
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  );
+};
+
+export default Contato;
