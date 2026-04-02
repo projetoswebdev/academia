@@ -7,20 +7,20 @@ const Contato = () => {
 
        
       <form>
-        {/* Seção nome */}
+       
         <label htmlFor="nome">Nome</label>
         <input type="text" id="nome" name="nome" />
 
-        {/* Seção email */}
+       
         <label htmlFor="email">Email</label>
         <input type="email" id="email" name="email" />
 
-        {/* Seção telefone */}
+        
         <label htmlFor="telefone">Telefone</label>
         <input type="tel" id="telefone" name="telefone" />
 
-        {/* Seção mensagem */}
-        <label htmlFor="mensagem">Mensagem</label>
+       
+        <label htmlFor="mensagem">Deixe sua mensagem para a ForceX!</label>
         <textarea id="mensagem" name="mensagem"></textarea>
 
       
