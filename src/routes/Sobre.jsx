@@ -30,8 +30,8 @@ const time = [
 const Sobre = () => {
   return (
     // header
-    <div className="sobre-pagina">
-      <section className="container-sobre">
+    <div className="sobre pagina">
+      <section className=" container container-sobre">
         <div className="sobre-hero">
           <p className="cabecalho">Quem Somos</p>
           <h1 className="info-titulo">MAIS QUE UMA<br /><span>ACADEMIA</span></h1>

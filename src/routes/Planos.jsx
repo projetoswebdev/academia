@@ -57,8 +57,8 @@ const Planos = () => {
   const [anual, setAnual] = useState(false)
 
   return (
-    <div className="pagina-plano">
-      <div className="container">
+    <div className="pagina plano">
+      <div className="container container-planos">
         <p className="cabecalho">Nossos Planos</p>
         <h1 className="info-titulo">INVISTA NO SEU<br/><span>MELHOR EU</span></h1>
         <p className="planos-subtitulo">
