@@ -3,7 +3,7 @@ const Contato = () => {
     <section>
      
       <h2>Contato</h2>
-      <p>Entre em contato com a nossa Academia Inteligente.</p>
+      <p>Entre em contato com a ForceX.</p>
 
        
       <form>
