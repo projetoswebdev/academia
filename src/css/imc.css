@@ -1,0 +1,131 @@
+.calculadora-imc {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.calculadora-card {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--green-deeper) 0%, var(--green-dark) 100%);
+  border: 1px solid rgba(242, 242, 242, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.calculadora-texto {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: rgba(242, 242, 242, 0.8);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.campo-imc {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+.campo-imc label {
+  margin-bottom: 0.5rem;
+  color: var(--off-white);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.campo-imc input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(242, 242, 242, 0.14);
+  border-radius: var(--radius-md);
+  background-color: rgba(242, 242, 242, 0.05);
+  color: var(--off-white);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.campo-imc input::placeholder {
+  color: rgba(242, 242, 242, 0.45);
+}
+
+.campo-imc input:focus {
+  border-color: var(--warm-brown);
+  box-shadow: 0 0 0 3px rgba(115, 93, 88, 0.2);
+}
+
+.acoes-imc {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.acoes-imc .btn-planos,
+.acoes-imc .btn-outline {
+  border-radius: var(--radius-md);
+}
+
+.resultado-imc {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: rgba(242, 242, 242, 0.05);
+  border-left: 4px solid var(--warm-brown);
+  border-radius: var(--radius-md);
+}
+
+.resultado-imc h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--off-white);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.resultado-imc p {
+  color: rgba(242, 242, 242, 0.88);
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .calculadora-imc {
+    padding: 2rem 0;
+  }
+
+  .calculadora-card {
+    padding: 1.5rem;
+  }
+
+  .acoes-imc {
+    flex-direction: column;
+  }
+
+  .acoes-imc .btn-planos,
+  .acoes-imc .btn-outline {
+    width: 100%;
+  }
+
+  .resultado-imc h3 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculadora-card {
+    padding: 1.2rem;
+  }
+
+  .calculadora-texto {
+    font-size: 0.95rem;
+  }
+
+  .campo-imc input {
+    font-size: 0.95rem;
+    padding: 0.85rem 0.9rem;
+  }
+}

@@ -16,7 +16,7 @@ const Footer = () => {
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/sobre">Sobre</NavLink></li>
             <li><NavLink to="/planos">Planos</NavLink></li>
-            <li><NavLink to="/calculadora-imc">Calculadora IMC</NavLink></li>
+            <li><NavLink to="/Imc">Calculadora IMC</NavLink></li>
             <li><NavLink to="/contato">Contato</NavLink></li>
           </ul>
         </div>

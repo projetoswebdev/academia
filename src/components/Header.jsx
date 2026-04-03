@@ -16,7 +16,7 @@ const Header = () => {
     { to: '/', label: 'Home' },
     { to: '/sobre', label: 'Sobre' },
     { to: '/planos', label: 'Planos' },
-    { to: '/calculadora-imc', label: 'Calc. IMC' },
+    { to: '/Imc', label: 'Calc. IMC' },
     { to: '/contato', label: 'Contato' },
   ]
 
