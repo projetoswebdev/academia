@@ -1,3 +1,4 @@
+import '../css/sobre.css'
 
 const timeline = [
   { ano: '2009', 
@@ -30,18 +31,18 @@ const time = [
 const Sobre = () => {
   return (
     // header
-    <div className="sobre-pagina">
-      <section className="container-sobre">
-        <div className="sobre-hero">
+    <div className="sobre pagina">
+      <section className="sobre-hero container">
+        <div className="sobre-hero__content">
           <p className="cabecalho">Quem Somos</p>
           <h1 className="info-titulo">MAIS QUE UMA<br /><span>ACADEMIA</span></h1>
-          <p className="sobre-subtitulo">
+          <p className="sobre-hero__sub">
             Somos um ecossistema de transformação física e mental, guiado por tecnologia de ponta
             e profissionais apaixonados pelo que fazem.
           </p>
         </div>
         <div className="sobre-hero-visual">
-          <div className="sobre-hero-card">
+          <div className=".sobre-hero__card">
             <div className="sobre-card">
               <span>🏅</span>
               <p>Certificada como</p>
@@ -52,7 +53,7 @@ const Sobre = () => {
         </div>
       </section>
       {/* valores da marca */}
-      <section className="valores-container">
+      <section className="container valores-container">
         {[
           { icone: '🎯', titulo: 'Missão', texto: 'Democratizar o acesso a treinos de alta performance com o poder da inteligência artificial, tornando cada aluno protagonista da sua evolução.' },
           { icone: '🔭', titulo: 'Visão', texto: 'Ser referência nacional em academias inteligentes até 2026, liderando a revolução fitness com tecnologia e humanidade.' },
@@ -74,6 +75,7 @@ const Sobre = () => {
           <div className="timeline">
             {timeline.map((t, i) => (
               <div key={t.ano} className={`timeline-item ${i % 2 === 0 ? 'timeline_item--left' : 'timeline_item--right'}`}>
+                <div className="timeline__dot" />
                 <div className="timeline-content">
                   <span className="timeline-ano">{t.ano}</span>
                   <p>{t.evento}</p>
@@ -85,7 +87,7 @@ const Sobre = () => {
       </section>
 
       {/* apresentação do time */}
-      <section className="time-container">
+      <section className="time-container container">
         <p className="cabecalho">Time ForceX</p>
         <h2 className="info-titulo">QUEM FAZ A<br /><span>DIFERENÇA</span></h2>
         <div className="time-grid">

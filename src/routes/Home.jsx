@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import '../css/home.css'
 
 const planosPopulares = [
   {
@@ -39,8 +40,8 @@ const Home = () => {
   return (
     <div className='home'>
       {/* banner */}
-      <section className='hero'>
-        <div className='hero-container'>
+      <section className='pagina hero'>
+        <div className='container hero-container'>
           <div className='badge'>Academia Inteligente</div>
           <h1 className='hero-titulo'>TRANSFORME<br/> SEU <span>CORPO</span><br/> COM INTELIGÊNCIA</h1>
           <p className='subtitulo'>Treinos personalizados por IA, acompanhamento em tempo real e a estrutura mais moderna de São Paulo</p>
@@ -54,7 +55,7 @@ const Home = () => {
 
       {/* estatisticas */}
       <section className='stats'>
-        <div className='grid-stats'>
+        <div className=' container grid-stats'>
           {stats.map(s =>(
             <div key={s.texto} className='stat-card'>
               <span className='stats-card-valor'>{s.valor}</span>
@@ -65,13 +66,9 @@ const Home = () => {
       </section>
       
       {/* informações/beneficios academia */}
-      <section className='container-info'>
+      <section className=' container container-info'>
         <div className='info-text'>
-          <h1 className="info-titulo">
-            TRANSFORME<br />
-            SEU <span>CORPO</span><br />
-            COM INTELIGÊNCIA
-          </h1>
+          <h2 className="info-titulo">POR QUE A<br /><span>FORCEX?</span></h2>
           <p>Somos a primeira academia de São Paulo a integrar inteligência artificial no acompanhamento de treinos. Cada aluno recebe um plano 100% personalizado, ajustado em tempo real conforme sua evolução.</p>
           <p>Nossa tecnologia monitora seu desempenho, sugere ajustes e mantém você motivado dia após dia.</p>
           <Link to="/sobre" className='btn-outline' style={{marginTop:'1.5rem', display:'inline-block'}}>Conheça nossa história</Link>
@@ -95,13 +92,12 @@ const Home = () => {
 
       {/* planos da academia */}
       <section className='planos'>
-        <div className='container-planos'>
+        <div className='container container-planos'>
           <p className='planos-cabecalho'>PLANOS MAIS POPULARES</p>
-          <div className='info-titulo'>ESCOLHA SEU </div>
-          <div className='info-titulo'><span>NÍVEL</span></div>
+          <h2 className="info-titulo">ESCOLHA SEU <span>NÍVEL</span></h2>
           <div className='planos-grid'>
             {planosPopulares.map(p =>(
-              <div key={p.nome} className='card-planos'>
+              <div key={p.nome} className={`card-planos ${p.highlight ? 'card-planos--highlight' : ''}`}>
                 {p.highlight && <div className='card-planos-badge'>Mais Escolhido</div>}
                 <div className='planos-card-icone'>{p.icone}</div>
                 <h3 className='planos-card-nome'>{p.nome}</h3>
