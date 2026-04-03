@@ -47,7 +47,7 @@ const Home = () => {
           <p className='subtitulo'>Treinos personalizados por IA, acompanhamento em tempo real e a estrutura mais moderna de São Paulo</p>
           <div className='hero-btn'>
             <Link to="/planos" className='btn-planos'>Conheça nossos planos</Link>
-            <Link to="/contato" className='btn-outline'>Calcular IMC</Link>
+            <Link to="/imc" className='btn-imc'>Calcular IMC</Link>
           </div>
         </div>
         <div className='hero-scroll'>↓ scroll</div>

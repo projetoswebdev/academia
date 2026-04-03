@@ -90,7 +90,7 @@ button {
 
 }
 
-.btn-outline {
+.btn-imc {
   display: inline-block;
   background: transparent;
   color: var(--off-white);
