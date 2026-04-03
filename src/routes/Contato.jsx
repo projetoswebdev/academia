@@ -1,31 +1,39 @@
+import "../css/contato.css";
+
 const Contato = () => {
   return (
-    <section>
-     
-      <h2>Contato</h2>
-      <p>Entre em contato com a ForceX.</p>
+    <section className="contato pagina">
+      <div className="container">
+        <div className="contato-card">
+          <h2 className="info-titulo">
+            Entre em <span>Contato</span>
+          </h2>
 
-       
-      <form>
-       
-        <label htmlFor="nome">Nome</label>
-        <input type="text" id="nome" name="nome" />
+          <p className="contato-texto">Entre em contato com a ForceX.</p>
 
-       
-        <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
+          <form className="contato-form">
+            <label htmlFor="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" />
 
-        
-        <label htmlFor="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" />
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email" />
 
-       
-        <label htmlFor="mensagem">Deixe sua mensagem para a ForceX!</label>
-        <textarea id="mensagem" name="mensagem"></textarea>
+            <label htmlFor="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="Digite seu telefone" />
 
-      
-        <button type="submit">Enviar</button>
-      </form>
+            <label htmlFor="mensagem">Deixe sua mensagem para a ForceX!</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              placeholder="Escreva sua mensagem"
+            ></textarea>
+
+            <button type="submit" className="btn-planos">
+              Enviar
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
   );
 };
